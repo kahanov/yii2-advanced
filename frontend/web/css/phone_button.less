@@ -1,0 +1,156 @@
+.item_phone_button {
+
+  .phone_button__container {
+    width: 155px;
+    height: 28px;
+
+    .phone_button__button_component {
+      padding: 3px 16px 5px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #fff;
+      background-color: #2b87db;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      white-space: nowrap;
+      position: relative;
+      display: inline-block;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      outline: none;
+      -webkit-transition: border .15s, background .15s, color .15s;
+      transition: border .15s, background .15s, color .15s;
+      -webkit-tap-highlight-color: transparent;
+      font-family: Lato;
+      border-radius: 42px;
+      box-shadow: none;
+      border: none;
+
+      .phone_button__text {
+        display: inline-block;
+        overflow: hidden;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        -webkit-transition: opacity .3s ease .3s;
+        transition: opacity .3s ease .3s;
+      }
+
+      .phone_button__phone {
+        font-weight: 700;
+      }
+    }
+
+    .phone_button__number_text {
+      padding: 5px 0 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+      text-align: left;
+      letter-spacing: normal;
+      color: rgba(18, 18, 18, .92);
+    }
+  }
+}
+
+.phone_button {
+
+  &__container {
+    width: 155px;
+    height: 28px;
+  }
+
+  &__button_component {
+    font-size: 11px;
+    font-family: Lato,LatoWeb,PT Sans,Arial;
+    padding: 3px 16px 5px;
+    font-weight: normal;
+    cursor: pointer;
+    color: #000;
+    color: rgba(0,0,0,.55);
+    background-color: #fff;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-transition: border .15s, background .15s, color .15s;
+    transition: border .15s, background .15s, color .15s;
+    -webkit-tap-highlight-color: transparent;
+    border-color: #000;
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: 14px;
+    box-shadow: none;
+
+    &:hover, &:active {
+      color: #000;
+      color: rgba(0,0,0,.75);
+      border-color: #000;
+      border-color: rgba(0,0,0,.5);
+      cursor: pointer;
+    }
+  }
+
+  &__component--text {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    -webkit-transition: opacity .3s ease .3s;
+    transition: opacity .3s ease .3s;
+  }
+
+  &__phone {
+    font-weight: normal;
+  }
+
+  &__text {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__number_text {
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(0, 0, 0, 0.75);
+    cursor: default;
+  }
+
+  &__preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+    -webkit-animation: phone_preloader .5s linear infinite;
+    animation: phone_preloader .5s linear infinite;
+  }
+
+  @-webkit-keyframes phone_preloader {
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn)
+    }
+  }
+
+  @keyframes phone_preloader {
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn)
+    }
+  }
+}

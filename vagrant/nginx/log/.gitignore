@@ -1,0 +1,11 @@
+# nginx logs
+backend-access.log
+backend-error.log
+frontend-access.log
+frontend-error.log
+phpmyadmin-access.log
+phpmyadmin-error.log
+static-access.log
+static-error.log
+api-access.log
+api-error.log
