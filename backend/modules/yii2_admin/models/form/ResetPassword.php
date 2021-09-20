@@ -37,8 +37,8 @@ class ResetPassword extends Model
         $class = Yii::$app->getUser()->identityClass ?: 'backend\modules\yii2_admin\models\User';
         if (static::isPasswordResetTokenValid($token)) {
             $this->_user = $class::findOne([
-                    'password_reset_token' => $token,
-                    'status' => UserStatus::ACTIVE
+                'password_reset_token' => $token,
+                'status' => UserStatus::ACTIVE
             ]);
         }
         if (!$this->_user) {
@@ -86,7 +86,7 @@ class ResetPassword extends Model
         }
         $expire = ArrayHelper::getValue(Yii::$app->params, 'user.passwordResetTokenExpire', 24 * 3600);
         $parts = explode('_', $token);
-        $timestamp = (int) end($parts);
+        $timestamp = (int)end($parts);
         return $timestamp + $expire >= time();
     }
 }

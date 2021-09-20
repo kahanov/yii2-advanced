@@ -53,7 +53,7 @@ return [
             ],
             'currencyCode' => 'RUR',
             'thousandSeparator' => ' ',
-            'numberFormatterSymbols'=>[\NumberFormatter::CURRENCY_SYMBOL => '₽'],
+            'numberFormatterSymbols' => [\NumberFormatter::CURRENCY_SYMBOL => '₽'],
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager'

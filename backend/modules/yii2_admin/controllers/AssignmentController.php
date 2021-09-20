@@ -32,7 +32,7 @@ class AssignmentController extends Controller
         parent::init();
         if ($this->userClassName === null) {
             $this->userClassName = Yii::$app->getUser()->identityClass;
-            $this->userClassName = $this->userClassName ? : 'backend\modules\yii2_admin\models\User';
+            $this->userClassName = $this->userClassName ?: 'backend\modules\yii2_admin\models\User';
         }
     }
 
@@ -70,11 +70,11 @@ class AssignmentController extends Controller
         }
 
         return $this->render('index', [
-                'dataProvider' => $dataProvider,
-                'searchModel' => $searchModel,
-                'idField' => $this->idField,
-                'emailField' => $this->emailField,
-                'extraColumns' => $this->extraColumns,
+            'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
+            'idField' => $this->idField,
+            'emailField' => $this->emailField,
+            'extraColumns' => $this->extraColumns,
         ]);
     }
 
@@ -88,10 +88,10 @@ class AssignmentController extends Controller
         $model = $this->findModel($id);
 
         return $this->render('view', [
-                'model' => $model,
-                'idField' => $this->idField,
-                'emailField' => $this->emailField,
-                'fullnameField' => $this->fullnameField,
+            'model' => $model,
+            'idField' => $this->idField,
+            'emailField' => $this->emailField,
+            'fullnameField' => $this->fullnameField,
         ]);
     }
 

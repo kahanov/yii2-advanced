@@ -27,31 +27,31 @@ use yii\widgets\ActiveForm;
     <?= $form->
     field($model, 'title')->
     textInput(['maxLength' => true]) ?>
-	
-	<?= $form->
-	field($model, 'v_title')->
-	textInput(['maxLength' => true]) ?>
-	
-	<?= $form->
-	field($model, 'currency_code')->
-	textInput(['maxLength' => true]) ?>
-	
-	<?= $form->
-	field($model, 'currency_name')->
-	textInput(['maxLength' => true]) ?>
-	
-	<?= $form->
-	field($model, 'phone_code')->
-	textInput(['maxLength' => true]) ?>
-	
-	<?= $form->
-	field($model, 'language')->
-	textInput(['maxLength' => true]) ?>
-	
-	<?= $form->
-	field($model, 'slug')->
-	hint('<a class="my-gray-btn" data-input-text-id="geocountryform-title" data-input-slug-id="geocountryform-slug" data-id="translit" href="JavaScript:void(0);">' . Yii::t('common', 'Транслитерация') . '</a>')->
-	textInput(['maxLength' => true]) ?>
+
+    <?= $form->
+    field($model, 'v_title')->
+    textInput(['maxLength' => true]) ?>
+
+    <?= $form->
+    field($model, 'currency_code')->
+    textInput(['maxLength' => true]) ?>
+
+    <?= $form->
+    field($model, 'currency_name')->
+    textInput(['maxLength' => true]) ?>
+
+    <?= $form->
+    field($model, 'phone_code')->
+    textInput(['maxLength' => true]) ?>
+
+    <?= $form->
+    field($model, 'language')->
+    textInput(['maxLength' => true]) ?>
+
+    <?= $form->
+    field($model, 'slug')->
+    hint('<a class="my-gray-btn" data-input-text-id="geocountryform-title" data-input-slug-id="geocountryform-slug" data-id="translit" href="JavaScript:void(0);">' . Yii::t('common', 'Транслитерация') . '</a>')->
+    textInput(['maxLength' => true]) ?>
 
     <div class="ln_solid"></div>
 

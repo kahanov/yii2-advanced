@@ -16,13 +16,13 @@ class ContactForm extends Model
     public $body;
     public $verifyCode;
     public $check;
-	
-	
-	/**
-	 * @return array
-	 */
-	public function rules(): array
-	{
+
+
+    /**
+     * @return array
+     */
+    public function rules(): array
+    {
         return [
             // name, email, subject and body are required
             [['name', 'email', 'subject', 'body', 'check'], 'required'],
@@ -33,18 +33,18 @@ class ContactForm extends Model
             ['verifyCode', 'captcha'],
         ];
     }
-	
-	/**
-	 * @return array
-	 */
-	public function attributeLabels(): array
-	{
-		return [
-			'name' => Yii::t('frontend/site', 'Ваше имя'),
-			'subject' => Yii::t('frontend/site', 'Тема'),
-			'body' => Yii::t('frontend/site', 'Сообщение'),
-			'email' => Yii::t('frontend/site', 'E-mail'),
-			'verifyCode' => Yii::t('frontend/site', 'Проверочный код'),
-		];
-	}
+
+    /**
+     * @return array
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'name' => Yii::t('frontend/site', 'Ваше имя'),
+            'subject' => Yii::t('frontend/site', 'Тема'),
+            'body' => Yii::t('frontend/site', 'Сообщение'),
+            'email' => Yii::t('frontend/site', 'E-mail'),
+            'verifyCode' => Yii::t('frontend/site', 'Проверочный код'),
+        ];
+    }
 }

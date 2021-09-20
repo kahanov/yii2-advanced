@@ -18,7 +18,7 @@ class LoginForm extends Model
      * {@inheritdoc}
      */
     public function rules(): array
-	{
+    {
         return [
             // username and password are both required
             [['username', 'password'], 'required'],
@@ -26,17 +26,17 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
         ];
     }
-	
-	/**
-	 * @inheritdoc
-	 */
-	public function attributeLabels(): array
-	{
-		return [
-			'username' => Yii::t('common/login', 'Логин'),
-			'password' => Yii::t('common/login', 'Пароль'),
-			'rememberMe' => Yii::t('common/login', 'Запомнить меня'),
-		];
-	}
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'username' => Yii::t('common/login', 'Логин'),
+            'password' => Yii::t('common/login', 'Пароль'),
+            'rememberMe' => Yii::t('common/login', 'Запомнить меня'),
+        ];
+    }
 }
 

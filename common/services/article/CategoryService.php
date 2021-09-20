@@ -9,27 +9,27 @@ use yii\web\NotFoundHttpException;
 
 class CategoryService
 {
-	
-	/**
-	 * @param CategoryForm $formCategory
-	 * @param ArticleCategory|NULL $category
-	 * @return ArticleCategory
-	 */
-	public function save(CategoryForm $formCategory, ArticleCategory $category = NULL): ArticleCategory
-	{
-		if (!$category) {
-			$category = new ArticleCategory();
-		}
-		$category->name = $formCategory->name;
-		$category->slug = $formCategory->slug;
-		$category->sort = $formCategory->sort;
-		$category->title = $formCategory->title;
-		$category->description = $formCategory->description;
+
+    /**
+     * @param CategoryForm $formCategory
+     * @param ArticleCategory|NULL $category
+     * @return ArticleCategory
+     */
+    public function save(CategoryForm $formCategory, ArticleCategory $category = NULL): ArticleCategory
+    {
+        if (!$category) {
+            $category = new ArticleCategory();
+        }
+        $category->name = $formCategory->name;
+        $category->slug = $formCategory->slug;
+        $category->sort = $formCategory->sort;
+        $category->title = $formCategory->title;
+        $category->description = $formCategory->description;
         if (!$category->save()) {
             throw new \RuntimeException(Yii::t('common', 'Не удалось сохранить'));
         }
-		return $category;
-	}
+        return $category;
+    }
 
     /**
      * @param $id
@@ -38,12 +38,12 @@ class CategoryService
      * @throws \yii\db\StaleObjectException
      */
     public function remove($id): void
-	{
+    {
         $category = $this->get($id);
         if (!$category->delete()) {
             throw new \RuntimeException(Yii::t('common', 'Не удалось удалить'));
         }
-	}
+    }
 
     /**
      * @param $id

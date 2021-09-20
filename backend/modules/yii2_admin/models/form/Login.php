@@ -14,7 +14,7 @@ class Login extends Model
     public $username;
     public $password;
     public $rememberMe = true;
-    
+
     private $_user = false;
 
     /**
@@ -71,7 +71,7 @@ class Login extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $class = Yii::$app->getUser()->identityClass ? : 'backend\modules\yii2_admin\models\User';
+            $class = Yii::$app->getUser()->identityClass ?: 'backend\modules\yii2_admin\models\User';
             $this->_user = $class::findByUsername($this->username);
         }
 

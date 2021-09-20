@@ -9,11 +9,11 @@ use yii\web\AssetBundle;
  */
 class AccountAsset extends AssetBundle
 {
-	public $css = [
-		'css/account.css',
-	];
-	public $js = [];
-	public $depends = [
-		'frontend\assets\AppAsset',
-	];
+    public $css = [
+        'css/account.css',
+    ];
+    public $js = [];
+    public $depends = [
+        'frontend\assets\AppAsset',
+    ];
 }

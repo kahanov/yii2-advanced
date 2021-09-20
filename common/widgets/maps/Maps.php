@@ -9,42 +9,42 @@ use yii\web\View;
 
 class Maps extends Widget
 {
-	
-	public $language = 'ru_RU';
-	public $apiKey = null;
-	public $width = '100%';
-	public $height = '400px';
-	public $mapOptions = [];
-	public $additionalOptions = ['searchControlProvider' => 'yandex#search'];
-	public $disableScroll = '';
-	public $mapId = 'map';
-	public $coordinates;
-	
-	public function init()
-	{
-		parent::init();
-		if ($this->apiKey === null) {
-			$this->apiKey = Yii::$app->params['yandexApiKey'];
-		}
-		$this->mapOptions = Json::encode($this->mapOptions);
-		$this->additionalOptions = Json::encode($this->additionalOptions);
-		$this->registerClientScript();
-	}
-	
-	public function run()
-	{
-		return $this->render('map', [
-			'widget' => $this
-		]);
-	}
-	
-	public function registerClientScript()
-	{
-		$view = $this->getView();
-		$bundle = MapsAsset::register($view);
-		$url = 'https://api-maps.yandex.ru/2.1/?lang=' . $this->language . '&apikey=' . $this->apiKey;
-		//Yii::$app->view->registerJsFile($url, ['position' => View::POS_END]);
-		$js = <<< JS
+
+    public $language = 'ru_RU';
+    public $apiKey = null;
+    public $width = '100%';
+    public $height = '400px';
+    public $mapOptions = [];
+    public $additionalOptions = ['searchControlProvider' => 'yandex#search'];
+    public $disableScroll = '';
+    public $mapId = 'map';
+    public $coordinates;
+
+    public function init()
+    {
+        parent::init();
+        if ($this->apiKey === null) {
+            $this->apiKey = Yii::$app->params['yandexApiKey'];
+        }
+        $this->mapOptions = Json::encode($this->mapOptions);
+        $this->additionalOptions = Json::encode($this->additionalOptions);
+        $this->registerClientScript();
+    }
+
+    public function run()
+    {
+        return $this->render('map', [
+            'widget' => $this
+        ]);
+    }
+
+    public function registerClientScript()
+    {
+        $view = $this->getView();
+        $bundle = MapsAsset::register($view);
+        $url = 'https://api-maps.yandex.ru/2.1/?lang=' . $this->language . '&apikey=' . $this->apiKey;
+        //Yii::$app->view->registerJsFile($url, ['position' => View::POS_END]);
+        $js = <<< JS
 		    $.getScript('$url', function() {
                 ymaps.ready(init);
             });
@@ -80,6 +80,6 @@ class Maps extends Widget
 				map.geoObjects.add(placemark);
 			}
 JS;
-		$view->registerJs($js, View::POS_END);
-	}
+        $view->registerJs($js, View::POS_END);
+    }
 }

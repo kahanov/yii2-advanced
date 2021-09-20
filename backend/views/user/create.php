@@ -50,10 +50,10 @@ $this->params['breadcrumbs'][] = $this->title;
             field($model, 'password')->
             label(Yii::t('backend/user', 'Пароль'))->
             passwordInput(['maxLength' => true]) ?>
-	
-			<?= $form->field($model, 'role')->
-			label(Yii::t('backend/user', 'Роль'))->
-			dropDownList(\common\helpers\UserHelper::rolesList()) ?>
+
+            <?= $form->field($model, 'role')->
+            label(Yii::t('backend/user', 'Роль'))->
+            dropDownList(\common\helpers\UserHelper::rolesList()) ?>
 
             <div class="ln_solid"></div>
             <div class="form-group">

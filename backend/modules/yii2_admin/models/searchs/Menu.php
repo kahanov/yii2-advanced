@@ -9,7 +9,7 @@ use backend\modules\yii2_admin\models\Menu as MenuModel;
 
 /**
  * Menu represents the model behind the search form about [[\backend\modules\yii2_admin\models\Menu]].
- * 
+ *
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
@@ -46,8 +46,8 @@ class Menu extends MenuModel
         $query = MenuModel::find()
             ->from(MenuModel::tableName() . ' t')
             ->joinWith(['menuParent' => function ($q) {
-            $q->from(MenuModel::tableName() . ' parent');
-        }]);
+                $q->from(MenuModel::tableName() . ' parent');
+            }]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query

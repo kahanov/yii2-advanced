@@ -14,15 +14,15 @@ use yii\filters\VerbFilter;
 class CategoryController extends Controller
 {
     private $service;
-	
-	/**
-	 * CategoryController constructor.
-	 * @param $id
-	 * @param $module
-	 * @param CategoryService $service
-	 * @param array $config
-	 */
-	public function __construct($id, $module, CategoryService $service, $config = [])
+
+    /**
+     * CategoryController constructor.
+     * @param $id
+     * @param $module
+     * @param CategoryService $service
+     * @param array $config
+     */
+    public function __construct($id, $module, CategoryService $service, $config = [])
     {
         parent::__construct($id, $module, $config);
         $this->service = $service;
@@ -56,23 +56,23 @@ class CategoryController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
-	
-	/**
-	 * @param $id
-	 * @return string
-	 * @throws NotFoundHttpException
-	 */
-	public function actionView($id)
+
+    /**
+     * @param $id
+     * @return string
+     * @throws NotFoundHttpException
+     */
+    public function actionView($id)
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
-	
-	/**
-	 * @return string|\yii\web\Response
-	 */
-	public function actionCreate()
+
+    /**
+     * @return string|\yii\web\Response
+     */
+    public function actionCreate()
     {
         $form = new CategoryForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
@@ -90,13 +90,13 @@ class CategoryController extends Controller
             'model' => $form,
         ]);
     }
-	
-	/**
-	 * @param $id
-	 * @return string|\yii\web\Response
-	 * @throws NotFoundHttpException
-	 */
-	public function actionUpdate($id)
+
+    /**
+     * @param $id
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
+    public function actionUpdate($id)
     {
         $category = $this->findModel($id);
 
@@ -117,14 +117,14 @@ class CategoryController extends Controller
             'category' => $category,
         ]);
     }
-	
-	/**
-	 * @param $id
-	 * @return \yii\web\Response
-	 * @throws \Throwable
-	 * @throws \yii\db\StaleObjectException
-	 */
-	public function actionDelete($id)
+
+    /**
+     * @param $id
+     * @return \yii\web\Response
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionDelete($id)
     {
         try {
             $this->service->remove($id);
@@ -135,17 +135,17 @@ class CategoryController extends Controller
 
         return $this->redirect(['index']);
     }
-	
-	/**
-	 * @param $id
-	 * @return ArticleCategory
-	 * @throws NotFoundHttpException
-	 */
-	protected function findModel($id): ArticleCategory
+
+    /**
+     * @param $id
+     * @return ArticleCategory
+     * @throws NotFoundHttpException
+     */
+    protected function findModel($id): ArticleCategory
     {
         if (($model = ArticleCategory::findOne($id)) !== null) {
             return $model;
         }
-		throw new NotFoundHttpException(Yii::t('common', 'Запрашиваемая страница не существует'));
+        throw new NotFoundHttpException(Yii::t('common', 'Запрашиваемая страница не существует'));
     }
 }

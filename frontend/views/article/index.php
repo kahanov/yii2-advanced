@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\DataProviderInterface */
 /* @var $searchForm \frontend\forms\ArticleSearch */
+
 /* @var $category \common\models\article\ArticleCategory */
 
 use common\helpers\BaseFrontendHelper;
@@ -31,12 +32,12 @@ CSS;
 $this->registerCss($css);
 ?>
 <div class="article">
-	<?= $this->render('blocks/_category', [
-		'categoriesList' => $searchForm->categoriesList()
-	]) ?>
-	
-	<?= $this->render('blocks/_list', [
-		'dataProvider' => $dataProvider,
-		'categoryName' => (!empty($categoryName)) ? $categoryName : $this->title
-	]) ?>
+    <?= $this->render('blocks/_category', [
+        'categoriesList' => $searchForm->categoriesList()
+    ]) ?>
+
+    <?= $this->render('blocks/_list', [
+        'dataProvider' => $dataProvider,
+        'categoryName' => (!empty($categoryName)) ? $categoryName : $this->title
+    ]) ?>
 </div>

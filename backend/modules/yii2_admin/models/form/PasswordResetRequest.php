@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\modules\yii2_admin\models\form;
 
 use backend\modules\yii2_admin\components\UserStatus;
@@ -18,7 +19,7 @@ class PasswordResetRequest extends Model
      */
     public function rules()
     {
-        $class = Yii::$app->getUser()->identityClass ? : 'backend\modules\yii2_admin\models\User';
+        $class = Yii::$app->getUser()->identityClass ?: 'backend\modules\yii2_admin\models\User';
         return [
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
@@ -39,7 +40,7 @@ class PasswordResetRequest extends Model
     public function sendEmail()
     {
         /* @var $user User */
-        $class = Yii::$app->getUser()->identityClass ? : 'backend\modules\yii2_admin\models\User';
+        $class = Yii::$app->getUser()->identityClass ?: 'backend\modules\yii2_admin\models\User';
         $user = $class::findOne([
             'status' => UserStatus::ACTIVE,
             'email' => $this->email,

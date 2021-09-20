@@ -6,19 +6,19 @@ use yii\web\AssetBundle;
 
 class Asset extends AssetBundle
 {
-	public $sourcePath = __DIR__ . "/assets";
-	
-	public $css = [
-		'css/avatar.css'
-	];
+    public $sourcePath = __DIR__ . "/assets";
 
-	public $js = [
-		'js/avatar.js'
-	];
+    public $css = [
+        'css/avatar.css'
+    ];
 
-	public $depends = [
-		'yii\web\JqueryAsset',
-		'common\widgets\avatar\JcropAsset',
-		'common\widgets\avatar\SimpleAjaxUploaderAsset',
-	];
+    public $js = [
+        'js/avatar.js'
+    ];
+
+    public $depends = [
+        'yii\web\JqueryAsset',
+        'common\widgets\avatar\JcropAsset',
+        'common\widgets\avatar\SimpleAjaxUploaderAsset',
+    ];
 }

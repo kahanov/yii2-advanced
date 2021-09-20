@@ -15,11 +15,11 @@ class ArticleSearch extends Model
     public $name;
     public $status;
     public $category_id;
-	
-	/**
-	 * @return array
-	 */
-	public function rules(): array
+
+    /**
+     * @return array
+     */
+    public function rules(): array
     {
         return [
             [['id', 'status', 'category_id',], 'integer'],
@@ -58,19 +58,19 @@ class ArticleSearch extends Model
 
         return $dataProvider;
     }
-	
-	/**
-	 * @return array
-	 */
-	public function categoriesList(): array
+
+    /**
+     * @return array
+     */
+    public function categoriesList(): array
     {
         return ArrayHelper::map(ArticleCategory::find()->orderBy('sort')->asArray()->all(), 'id', 'name');
     }
-	
-	/**
-	 * @return array
-	 */
-	public function statusList(): array
+
+    /**
+     * @return array
+     */
+    public function statusList(): array
     {
         return ArticleHelper::statusList();
     }

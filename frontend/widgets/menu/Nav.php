@@ -9,7 +9,8 @@ use yii\helpers\ArrayHelper;
 use yii\widgets\Menu;
 use yii\helpers\VarDumper;
 
-class Nav extends Menu {
+class Nav extends Menu
+{
     /**
      * @var array list of items in the nav widget. Each array element represents a single
      * menu item which can be either a string or an array with the following structure:
@@ -109,14 +110,14 @@ class Nav extends Menu {
         }
 
         if (!isset($item['label'])) {
-            VarDumper::dump($item,10,true);
+            VarDumper::dump($item, 10, true);
             throw new InvalidConfigException("The 'label' option is required.");
         }
-        $label          = $this->encodeLabels ? Html::encode($item['label']) : $item['label'];
-        $options        = ArrayHelper::getValue($item, 'options', []);
-        $items          = ArrayHelper::getValue($item, 'items');
-        $url            = ArrayHelper::getValue($item, 'url', '#');
-        $linkOptions    = ArrayHelper::getValue($item, 'linkOptions', []);
+        $label = $this->encodeLabels ? Html::encode($item['label']) : $item['label'];
+        $options = ArrayHelper::getValue($item, 'options', []);
+        $items = ArrayHelper::getValue($item, 'items');
+        $url = ArrayHelper::getValue($item, 'url', '#');
+        $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
 
         if (isset($item['active'])) {
             $active = ArrayHelper::remove($item, 'active', false);
@@ -141,6 +142,7 @@ class Nav extends Menu {
 
         return Html::tag('li', Html::a($label, $url, $linkOptions) . $items, $options);
     }
+
     /**
      * Checks whether a menu item is active.
      * This is done by checking if [[route]] and [[params]] match that specified in the `url` option of the menu item.

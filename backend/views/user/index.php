@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'layout' => "\n{summary}\n{items}{pager}",
-			'summary' => "<p>" . Yii::t('backend/common', 'Показаны') . " {begin} - {end} " . Yii::t('backend/common', 'из') . " {totalCount} " . Yii::t('backend/common', 'записей') . "</p>",
+            'summary' => "<p>" . Yii::t('backend/common', 'Показаны') . " {begin} - {end} " . Yii::t('backend/common', 'из') . " {totalCount} " . Yii::t('backend/common', 'записей') . "</p>",
             'tableOptions' => ['class' => 'table dataTable projects'],
             'bordered' => false,
             'striped' => true,
@@ -76,18 +76,18 @@ $this->params['breadcrumbs'][] = $this->title;
                     'format' => 'raw',
                 ],
                 'email:email',
-				[
-					'attribute' => 'role',
-					'label' => Yii::t('backend/user', 'Роль'),
-					'filter' => UserHelper::rolesList(),
-					'value' => function (User $model) {
-						$roles = Yii::$app->authManager->getRolesByUser($model->id);
-						return $roles === [] ? $this->grid->emptyCell : implode(', ', array_map(function (Item $role) {
-							return UserHelper::roleLabel($role);
-						}, $roles));
-					},
-					'format' => 'raw',
-				],
+                [
+                    'attribute' => 'role',
+                    'label' => Yii::t('backend/user', 'Роль'),
+                    'filter' => UserHelper::rolesList(),
+                    'value' => function (User $model) {
+                        $roles = Yii::$app->authManager->getRolesByUser($model->id);
+                        return $roles === [] ? $this->grid->emptyCell : implode(', ', array_map(function (Item $role) {
+                            return UserHelper::roleLabel($role);
+                        }, $roles));
+                    },
+                    'format' => 'raw',
+                ],
                 [
                     'attribute' => 'status',
                     'label' => Yii::t('backend/user', 'Статус'),

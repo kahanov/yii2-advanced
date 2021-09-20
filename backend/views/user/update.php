@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $model \common\models\user\User */
+
 /* @var $model backend\forms\user\UserEditForm */
 
 use yii\helpers\Html;

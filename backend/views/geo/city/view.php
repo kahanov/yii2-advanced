@@ -39,18 +39,18 @@ $this->params['breadcrumbs'][] = $this->title;
                     'id',
                     'title',
                     'v_title',
-					[
-						'attribute' => 'country_id',
-						'value' => $model->country->title,
-					],
-					[
-						'attribute' => 'region_id',
-						'value' => $model->region->title,
-					],
-					[
-						'attribute' => 'district_id',
-						'value' => ($model->district) ? $model->district->title : NULL,
-					],
+                    [
+                        'attribute' => 'country_id',
+                        'value' => $model->country->title,
+                    ],
+                    [
+                        'attribute' => 'region_id',
+                        'value' => $model->region->title,
+                    ],
+                    [
+                        'attribute' => 'district_id',
+                        'value' => ($model->district) ? $model->district->title : NULL,
+                    ],
                     'main_city_region',
                     'slug',
                     'coordinate_x',

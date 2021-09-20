@@ -75,7 +75,8 @@ class HelperController extends Controller
                 'model' => $form,
                 'countryId' => $countryId,
             ]);
-            $countries = Country::find()/*->where(['id' => 1])*/->all();
+            $countries = Country::find()/*->where(['id' => 1])*/
+            ->all();
 
             return $this->renderAjax('choice-city/index', [
                 'countries' => $countries,

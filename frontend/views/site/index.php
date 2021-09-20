@@ -26,9 +26,9 @@ HomeAsset::register($this);
         <?= $this->render('home_blocks/_company', ['companies' => $companies, 'additional' => $additional]) ?>
     <?php endif; ?>
 
-	<?php if (!empty($articles)): ?>
-		<?= $this->render('home_blocks/_news', ['articles' => $articles]) ?>
-	<?php endif; ?>
+    <?php if (!empty($articles)): ?>
+        <?= $this->render('home_blocks/_news', ['articles' => $articles]) ?>
+    <?php endif; ?>
 
     <?= $this->render('home_blocks/_static_text', ['additional' => $additional]) ?>
 </div>

@@ -18,7 +18,8 @@ use frontend\widgets\menu\NavBar;
                 </a>
             </div>
             <div class="header__col header__right-container">
-                <div class="header__bottom-menu-mobile" style="<?= (Yii::$app->devicedetect->isMobile()) ? 'width: auto;' : '' ?>">
+                <div class="header__bottom-menu-mobile"
+                     style="<?= (Yii::$app->devicedetect->isMobile()) ? 'width: auto;' : '' ?>">
                     <button type="button" class="navbar-toggle collapsed header__mobile-menu-btn"
                             style="<?= (Yii::$app->devicedetect->isMobile()) ? 'display: block;' : '' ?>">
                         <span class="sr-only">Toggle navigation</span>

@@ -9,14 +9,14 @@ use yii\helpers\Html;
 
 class ArticleHelper
 {
-	/**
-	 * @return array
-	 */
-	public static function statusList(): array
+    /**
+     * @return array
+     */
+    public static function statusList(): array
     {
         return [
             Article::STATUS_DRAFT => Yii::t('common/article', 'Черновик'),
-			Article::STATUS_ACTIVE => Yii::t('common/article', 'Опубликован'),
+            Article::STATUS_ACTIVE => Yii::t('common/article', 'Опубликован'),
         ];
     }
 

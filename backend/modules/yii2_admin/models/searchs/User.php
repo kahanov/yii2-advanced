@@ -14,7 +14,7 @@ class User extends Model
     public $id;
     public $email;
     public $status;
-    
+
     /**
      * @inheritdoc
      */
@@ -36,7 +36,7 @@ class User extends Model
     public function search($params)
     {
         /* @var $query \yii\db\ActiveQuery */
-        $class = Yii::$app->getUser()->identityClass ? : 'backend\modules\yii2_admin\models\User';
+        $class = Yii::$app->getUser()->identityClass ?: 'backend\modules\yii2_admin\models\User';
         $query = $class::find();
 
         $dataProvider = new ActiveDataProvider([

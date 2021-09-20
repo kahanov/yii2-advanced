@@ -133,7 +133,7 @@ class Route extends \backend\modules\yii2_admin\BaseObject
                 // Assemble configuration for current app.
                 foreach ($configPaths as $configPath) {
                     // Merge every new configuration with the old config array.
-                    $config = yii\helpers\ArrayHelper::merge($config, require (Yii::getAlias($configPath)));
+                    $config = yii\helpers\ArrayHelper::merge($config, require(Yii::getAlias($configPath)));
                 }
                 // Create new app using the config array.
                 unset($config['bootstrap']);

@@ -9,7 +9,7 @@ use backend\modules\yii2_admin\models\Menu;
 /**
  * MenuHelper used to generate menu depend of user role.
  * Usage
- * 
+ *
  * ```
  * use backend\modules\yii2_admin\components\MenuHelper;
  * use yii\bootstrap\Nav;
@@ -18,9 +18,9 @@ use backend\modules\yii2_admin\models\Menu;
  *    'items' => MenuHelper::getAssignedMenu(Yii::$app->user->id)
  * ]);
  * ```
- * 
+ *
  * To reformat returned, provide callback to method.
- * 
+ *
  * ```
  * $callback = function ($menu) {
  *    $data = eval($menu['data']);
@@ -47,7 +47,7 @@ class MenuHelper
      * @param integer $root
      * @param \Closure $callback use to reformat output.
      * callback should have format like
-     * 
+     *
      * ```
      * function ($menu) {
      *    return [
@@ -59,7 +59,7 @@ class MenuHelper
      *    ]
      * }
      * ```
-     * @param boolean  $refresh
+     * @param boolean $refresh
      * @return array
      */
     public static function getAssignedMenu($userId, $root = null, $callback = null, $refresh = false)

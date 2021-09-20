@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\modules\yii2_admin\models\form;
 
 use backend\modules\yii2_admin\components\UserStatus;
@@ -22,7 +23,7 @@ class Signup extends Model
      */
     public function rules()
     {
-        $class = Yii::$app->getUser()->identityClass ? : 'backend\modules\yii2_admin\models\User';
+        $class = Yii::$app->getUser()->identityClass ?: 'backend\modules\yii2_admin\models\User';
         return [
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
@@ -50,7 +51,7 @@ class Signup extends Model
     public function signup()
     {
         if ($this->validate()) {
-            $class = Yii::$app->getUser()->identityClass ? : 'backend\modules\yii2_admin\models\User';
+            $class = Yii::$app->getUser()->identityClass ?: 'backend\modules\yii2_admin\models\User';
             $user = new $class();
             $user->username = $this->username;
             $user->email = $this->email;

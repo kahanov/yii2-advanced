@@ -18,27 +18,27 @@ use yii\db\ActiveRecord;
  */
 class ArticleCategory extends ActiveRecord
 {
-	
-	/**
-	 * @return string
-	 */
-	public static function tableName(): string
-	{
-		return 'article_category';
-	}
-	
-	/**
-	 * @return array
-	 */
-	public function attributeLabels(): array
-	{
-		return [
-			'id' => Yii::t('common', 'Идентификатор'),
-			'name' => Yii::t('common', 'Название'),
-			'slug' => Yii::t('common', 'Название транслитом'),
-			'sort' => Yii::t('backend/common', 'Порядковый номер'),
-			'title' => Yii::t('backend/common', 'SEO title'),
-			'description' => Yii::t('backend/common', 'SEO description'),
-		];
-	}
+
+    /**
+     * @return string
+     */
+    public static function tableName(): string
+    {
+        return 'article_category';
+    }
+
+    /**
+     * @return array
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'id' => Yii::t('common', 'Идентификатор'),
+            'name' => Yii::t('common', 'Название'),
+            'slug' => Yii::t('common', 'Название транслитом'),
+            'sort' => Yii::t('backend/common', 'Порядковый номер'),
+            'title' => Yii::t('backend/common', 'SEO title'),
+            'description' => Yii::t('backend/common', 'SEO description'),
+        ];
+    }
 }

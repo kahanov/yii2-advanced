@@ -28,26 +28,26 @@ use kartik\select2\Select2;
     <?= $form->
     field($model, 'title')->
     textInput(['maxLength' => true]) ?>
-	
-	<?= $form->
-	field($model, 'v_title')->
-	textInput(['maxLength' => true]) ?>
-	
-	<?= $form->field($model, 'country_id')->
-	widget(Select2::class, [
-		'data' => $model->getCountryList(),
-		'language' => 'ru',
-		'showToggleAll' => false,
-		'options' => ['placeholder' => Yii::t('backend/geo', 'Выберите страну...'), 'multiple' => false],
-		'pluginOptions' => [
-			'allowClear' => true,
-		]
-	]); ?>
-	
-	<?= $form->
-	field($model, 'subdomain')->
-	hint('<a class="my-gray-btn" data-input-text-id="georegionform-title" data-input-slug-id="georegionform-subdomain" data-id="translit" href="JavaScript:void(0);">' . Yii::t('common', 'Транслитерация') . '</a>')->
-	textInput(['maxLength' => true]) ?>
+
+    <?= $form->
+    field($model, 'v_title')->
+    textInput(['maxLength' => true]) ?>
+
+    <?= $form->field($model, 'country_id')->
+    widget(Select2::class, [
+        'data' => $model->getCountryList(),
+        'language' => 'ru',
+        'showToggleAll' => false,
+        'options' => ['placeholder' => Yii::t('backend/geo', 'Выберите страну...'), 'multiple' => false],
+        'pluginOptions' => [
+            'allowClear' => true,
+        ]
+    ]); ?>
+
+    <?= $form->
+    field($model, 'subdomain')->
+    hint('<a class="my-gray-btn" data-input-text-id="georegionform-title" data-input-slug-id="georegionform-subdomain" data-id="translit" href="JavaScript:void(0);">' . Yii::t('common', 'Транслитерация') . '</a>')->
+    textInput(['maxLength' => true]) ?>
 
     <div class="ln_solid"></div>
 

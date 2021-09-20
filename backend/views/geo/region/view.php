@@ -39,10 +39,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     'id',
                     'title',
                     'v_title',
-					[
-						'attribute' => 'country_id',
-						'value' => $model->country->title,
-					],
+                    [
+                        'attribute' => 'country_id',
+                        'value' => $model->country->title,
+                    ],
                     'subdomain',
                 ],
             ]) ?>

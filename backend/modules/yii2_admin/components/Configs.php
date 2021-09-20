@@ -39,7 +39,6 @@ use yii\rbac\ManagerInterface;
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
-
 class Configs extends \backend\modules\yii2_admin\BaseObject
 {
     const CACHE_TAG = 'mdm.admin';
@@ -209,6 +208,7 @@ class Configs extends \backend\modules\yii2_admin\BaseObject
     {
         return static::instance()->authManager;
     }
+
     /**
      * @return integer
      */

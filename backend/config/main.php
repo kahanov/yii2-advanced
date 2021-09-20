@@ -79,7 +79,7 @@ return [
         },
     ],
     'as access' => [
-       // 'class' => 'yii\filters\AccessControl',
+        // 'class' => 'yii\filters\AccessControl',
         'class' => 'backend\modules\yii2_admin\components\AccessControl',
         //'except' => ['auth/login', 'site/error'],
         /*'rules' => [

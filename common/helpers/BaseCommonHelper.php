@@ -357,13 +357,13 @@ class BaseCommonHelper
      */
     public static function getImageMimeType($imagePath): ?string
     {
-        $mimes  =[
+        $mimes = [
             IMAGETYPE_GIF => 'image/gif',
             IMAGETYPE_JPEG => 'image/jpg',
             IMAGETYPE_PNG => 'image/png',
             IMAGETYPE_WEBP => 'image/webp'
         ];
-        if (($imageType = exif_imagetype($imagePath)) && (array_key_exists($imageType ,$mimes))) {
+        if (($imageType = exif_imagetype($imagePath)) && (array_key_exists($imageType, $mimes))) {
             return $mimes[$imageType];
         } else {
             return false;

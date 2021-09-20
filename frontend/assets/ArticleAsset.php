@@ -9,14 +9,14 @@ use yii\web\AssetBundle;
  */
 class ArticleAsset extends AssetBundle
 {
-	public $basePath = '@webroot';
-	public $baseUrl = '@web';
-	public $css = [
-		'css/article.css',
-	];
-	public $js = [];
-	public $depends = [
-		'yii\web\JqueryAsset',
+    public $basePath = '@webroot';
+    public $baseUrl = '@web';
+    public $css = [
+        'css/article.css',
+    ];
+    public $js = [];
+    public $depends = [
+        'yii\web\JqueryAsset',
         'frontend\assets\LazySizesAsset',
-	];
+    ];
 }

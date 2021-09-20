@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             [
                 'attribute' => 'status',
-                'value' => function($model) {
+                'value' => function ($model) {
                     return $model->status == 0 ? 'Inactive' : 'Active';
                 },
                 'filter' => [
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'yii\grid\ActionColumn',
                 'template' => Helper::filterActionColumn(['view', 'activate', 'delete']),
                 'buttons' => [
-                    'activate' => function($url, $model) {
+                    'activate' => function ($url, $model) {
                         if ($model->status == 10) {
                             return '';
                         }
@@ -49,9 +49,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         ];
                         return Html::a('<span class="glyphicon glyphicon-ok"></span>', $url, $options);
                     }
-                    ]
-                ],
+                ]
             ],
-        ]);
-        ?>
+        ],
+    ]);
+    ?>
 </div>

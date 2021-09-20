@@ -142,7 +142,7 @@ class Helper
 
     /**
      * Normalize route
-     * @param  string  $route    Plain route string
+     * @param  string $route Plain route string
      * @param  boolean|array $advanced Array containing the advanced configuration. Defaults to false.
      * @return string            Normalized route string
      */

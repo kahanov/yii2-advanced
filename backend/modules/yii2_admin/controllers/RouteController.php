@@ -29,6 +29,7 @@ class RouteController extends Controller
             ],
         ];
     }
+
     /**
      * Lists all Route models.
      * @return mixed

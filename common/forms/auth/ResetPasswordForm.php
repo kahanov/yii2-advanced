@@ -22,15 +22,15 @@ class ResetPasswordForm extends Model
             ['password', 'string', 'min' => 6],
         ];
     }
-	
-	/**
-	 * @inheritdoc
-	 */
-	public function attributeLabels(): array
-	{
-		return [
-			'password' => Yii::t('common/login', 'Пароль'),
-		];
-	}
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'password' => Yii::t('common/login', 'Пароль'),
+        ];
+    }
 }
 

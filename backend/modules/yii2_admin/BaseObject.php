@@ -2,7 +2,7 @@
 
 namespace backend\modules\yii2_admin;
 
-if(!class_exists('yii\base\BaseObject')){
+if (!class_exists('yii\base\BaseObject')) {
     class_alias('yii\base\Object', 'yii\base\BaseObject');
 }
 

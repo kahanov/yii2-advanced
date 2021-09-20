@@ -11,9 +11,9 @@ use backend\modules\yii2_admin\AutocompleteAsset;
 /* @var $form yii\widgets\ActiveForm */
 AutocompleteAsset::register($this);
 $opts = Json::htmlEncode([
-        'menus' => Menu::getMenuSource(),
-        'routes' => Menu::getSavedRoutes(),
-    ]);
+    'menus' => Menu::getMenuSource(),
+    'routes' => Menu::getSavedRoutes(),
+]);
 $this->registerJs("var _opts = $opts;");
 $this->registerJs($this->render('_script.js'));
 ?>
@@ -39,7 +39,7 @@ $this->registerJs($this->render('_script.js'));
     <div class="form-group">
         <?=
         Html::submitButton($model->isNewRecord ? Yii::t('rbac-admin', 'Create') : Yii::t('rbac-admin', 'Update'), ['class' => $model->isNewRecord
-                    ? 'btn btn-success' : 'btn btn-primary'])
+            ? 'btn btn-success' : 'btn btn-primary'])
         ?>
     </div>
     <?php ActiveForm::end(); ?>

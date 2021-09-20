@@ -20,27 +20,27 @@ use yii\db\ActiveQuery;
  */
 class Region extends ActiveRecord
 {
-	/**
-	 * @return string
-	 */
-	public static function tableName(): string
-	{
-		return 'region';
-	}
-	
-	/**
-	 * @return array
-	 */
-	public function attributeLabels(): array
-	{
-		return [
-			'id' => Yii::t('backend/geo', 'Идентификатор'),
-			'country_id' => Yii::t('backend/geo', 'Страна'),
-			'title' => Yii::t('backend/geo', 'Название'),
-			'v_title' => Yii::t('backend/geo', 'Название в дательном падеже'),
-			'subdomain' => Yii::t('backend/geo', 'Поддомен'),
-		];
-	}
+    /**
+     * @return string
+     */
+    public static function tableName(): string
+    {
+        return 'region';
+    }
+
+    /**
+     * @return array
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'id' => Yii::t('backend/geo', 'Идентификатор'),
+            'country_id' => Yii::t('backend/geo', 'Страна'),
+            'title' => Yii::t('backend/geo', 'Название'),
+            'v_title' => Yii::t('backend/geo', 'Название в дательном падеже'),
+            'subdomain' => Yii::t('backend/geo', 'Поддомен'),
+        ];
+    }
 
     /**
      * @param Country $country
@@ -59,12 +59,12 @@ class Region extends ActiveRecord
         }
         return $coordinates;
     }
-	
-	/**
-	 * @return ActiveQuery
-	 */
-	public function getCountry(): ActiveQuery
-	{
-		return $this->hasOne(Country::class, ['id' => 'country_id']);
-	}
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getCountry(): ActiveQuery
+    {
+        return $this->hasOne(Country::class, ['id' => 'country_id']);
+    }
 }

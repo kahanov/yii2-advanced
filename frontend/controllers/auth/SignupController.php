@@ -53,7 +53,7 @@ class SignupController extends Controller
             throw new \yii\web\ForbiddenHttpException(Yii::t('common', 'Извините, сейчас сайт переносится на новый сервер, по этому функционал этот заработает через несколько часов.'));
         }
         $form = new SignupForm();
-        $form->scenario =  (php_sapi_name() === 'cli') ? 'default' : 'signup';
+        $form->scenario = (php_sapi_name() === 'cli') ? 'default' : 'signup';
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             try {
                 if ($form->check === 'nospam') {

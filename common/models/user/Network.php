@@ -13,39 +13,39 @@ use Webmozart\Assert\Assert;
  */
 class Network extends ActiveRecord
 {
-	/**
-	 * @return string
-	 */
-	public static function tableName()
-	{
-		return '{{%user_network}}';
-	}
-	
-	/**
-	 * @param $network
-	 * @param $identity
-	 * @return Network
-	 */
-	public static function create($network, $identity): self
-	{
-		//Short check for void
-		Assert::notEmpty($network);
-		Assert::notEmpty($identity);
-		
-		$item = new static();
-		$item->network = $network;
-		$item->identity = $identity;
-		
-		return $item;
-	}
-	
-	/**
-	 * @param $network
-	 * @param $identity
-	 * @return bool
-	 */
-	public function isFor($network, $identity): bool
-	{
-		return $this->network === $network && $this->identity === $identity;
-	}
+    /**
+     * @return string
+     */
+    public static function tableName()
+    {
+        return '{{%user_network}}';
+    }
+
+    /**
+     * @param $network
+     * @param $identity
+     * @return Network
+     */
+    public static function create($network, $identity): self
+    {
+        //Short check for void
+        Assert::notEmpty($network);
+        Assert::notEmpty($identity);
+
+        $item = new static();
+        $item->network = $network;
+        $item->identity = $identity;
+
+        return $item;
+    }
+
+    /**
+     * @param $network
+     * @param $identity
+     * @return bool
+     */
+    public function isFor($network, $identity): bool
+    {
+        return $this->network === $network && $this->identity === $identity;
+    }
 }

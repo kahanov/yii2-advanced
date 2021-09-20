@@ -30,9 +30,9 @@ return [
                 'from' => ['support@example.com' => 'Mall.ru']
             ],
         ],
-       /* 'cache' => [
-            'class' => 'yii\caching\MemCache',
-            'useMemcached' => true,
-        ],*/
+        /* 'cache' => [
+             'class' => 'yii\caching\MemCache',
+             'useMemcached' => true,
+         ],*/
     ],
 ];

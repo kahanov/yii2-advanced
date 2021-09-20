@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
             <li><a class="close-link"><i class="fa fa-close"></i></a></li>
-			<li><?= Html::a('<i class="fa fa-plus"></i>', ['create'], ['class' => 'create-item'])?></li>
+            <li><?= Html::a('<i class="fa fa-plus"></i>', ['create'], ['class' => 'create-item']) ?></li>
         </ul>
         <div class="clearfix"></div>
     </div>
@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'label' => Yii::t('common', 'Операции'),
                     'filter' => Html::a('<span><i class="fa fa-plus"></i>' . Yii::t('backend/article', 'Создать статью') . '</span>', ['create'], ['class' => 'grid_button']),
                     'content' => function (Article $model) {
-						$viewUrl = Yii::$app->frontendUrlManager->createAbsoluteUrl(['/article/view', 'id' => $model->id]);
+                        $viewUrl = Yii::$app->frontendUrlManager->createAbsoluteUrl(['/article/view', 'id' => $model->id]);
                         $url_arr = [
                             ['url' => $viewUrl, 'label' => Yii::t('common', 'Смотреть')],
                             ['url' => Url::to(['update', 'id' => $model->id]), 'label' => Yii::t('common', 'Редактировать')],
@@ -48,41 +48,41 @@ $this->params['breadcrumbs'][] = $this->title;
                         return GridView::OperationsMenu($url_arr);
                     }
                 ],
-				[
-					'attribute' => 'photo',
-					'value' => function (Article $model) {
-						return $model->photo ? Html::img($model->photo->getThumbFileUrl('file', 'admin')) : null;
-					},
-					'format' => 'raw',
-					'contentOptions' => ['style' => 'width: 100px'],
-				],
-				[
-					'headerOptions' => ['width' => '50'],
-					'attribute' => 'id',
-				],
-				[
-					'attribute' => 'category_id',
-					'filter' => $searchModel->categoriesList(),
-					'value' => 'category.name',
-				],
-				'created_at:datetime',
-				[
-					'headerOptions' => ['width' => '75'],
-					'attribute' => 'status',
-					'filter' => $searchModel->statusList(),
-					'value' => function (Article $model) {
-						return \common\helpers\ArticleHelper::statusLabel($model->status);
-					},
-					'format' => 'raw',
-				],
-				[
-					'attribute' => 'name',
-					'value' => function (Article $model) {
-						$viewUrl = Yii::$app->frontendUrlManager->createAbsoluteUrl(['/article/view', 'id' => $model->id]);
-						return Html::a(Html::encode($model->name), $viewUrl);
-					},
-					'format' => 'raw',
-				],
+                [
+                    'attribute' => 'photo',
+                    'value' => function (Article $model) {
+                        return $model->photo ? Html::img($model->photo->getThumbFileUrl('file', 'admin')) : null;
+                    },
+                    'format' => 'raw',
+                    'contentOptions' => ['style' => 'width: 100px'],
+                ],
+                [
+                    'headerOptions' => ['width' => '50'],
+                    'attribute' => 'id',
+                ],
+                [
+                    'attribute' => 'category_id',
+                    'filter' => $searchModel->categoriesList(),
+                    'value' => 'category.name',
+                ],
+                'created_at:datetime',
+                [
+                    'headerOptions' => ['width' => '75'],
+                    'attribute' => 'status',
+                    'filter' => $searchModel->statusList(),
+                    'value' => function (Article $model) {
+                        return \common\helpers\ArticleHelper::statusLabel($model->status);
+                    },
+                    'format' => 'raw',
+                ],
+                [
+                    'attribute' => 'name',
+                    'value' => function (Article $model) {
+                        $viewUrl = Yii::$app->frontendUrlManager->createAbsoluteUrl(['/article/view', 'id' => $model->id]);
+                        return Html::a(Html::encode($model->name), $viewUrl);
+                    },
+                    'format' => 'raw',
+                ],
             ],
         ]); ?>
     </div>

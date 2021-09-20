@@ -19,22 +19,22 @@ class AuthService
      * @param MailerInterface $mailer
      */
     public function __construct(MailerInterface $mailer)
-	{
+    {
         $this->mailer = $mailer;
-	}
-	
-	/**
-	 * @param LoginForm $form
-	 * @return User
-	 */
-	public function auth(LoginForm $form): User
-	{
-		$user = $this->findByUsernameOrEmail($form->username);
-		
-		if (!$user || !$user->validatePassword($form->password)) {
-			throw new \DomainException(Yii::t('user', 'Неверный логин или пароль'));
-		}
-		if (!$user->isActive()) {
+    }
+
+    /**
+     * @param LoginForm $form
+     * @return User
+     */
+    public function auth(LoginForm $form): User
+    {
+        $user = $this->findByUsernameOrEmail($form->username);
+
+        if (!$user || !$user->validatePassword($form->password)) {
+            throw new \DomainException(Yii::t('user', 'Неверный логин или пароль'));
+        }
+        if (!$user->isActive()) {
             $this
                 ->mailer
                 ->compose(
@@ -44,11 +44,11 @@ class AuthService
                 ->setTo($user->email)
                 ->setSubject(Yii::t('user', 'Подтверждение регистрации') . ' ' . Yii::$app->name)
                 ->send();
-			throw new \DomainException(Yii::t('user', 'Вам необходимо подтвердить свой E-mail. Мы отправили вам повторное сообщение.'));
-		}
+            throw new \DomainException(Yii::t('user', 'Вам необходимо подтвердить свой E-mail. Мы отправили вам повторное сообщение.'));
+        }
 
-		return $user;
-	}
+        return $user;
+    }
 
     /**
      * @param $value

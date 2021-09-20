@@ -1,4 +1,5 @@
 $('i.glyphicon-refresh-animate').hide();
+
 function updateRoutes(r) {
     _opts.routes.available = r.available;
     _opts.routes.assigned = r.assigned;

@@ -38,10 +38,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attributes' => [
                     'id',
                     'title',
-					[
-						'attribute' => 'region_id',
-						'value' => $model->region->title,
-					],
+                    [
+                        'attribute' => 'region_id',
+                        'value' => $model->region->title,
+                    ],
                     'slug',
                 ],
             ]) ?>

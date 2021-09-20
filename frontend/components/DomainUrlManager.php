@@ -71,7 +71,7 @@ class DomainUrlManager extends UrlManager
     {
         $this->hostInfo = $request->getHostInfo();
         $host = $request->getHostName();
-        $domainManager = Yii::$app->cache->getOrSet('public_suffix_list', function($cache){
+        $domainManager = Yii::$app->cache->getOrSet('public_suffix_list', function ($cache) {
             return Rules::fromPath(Yii::getAlias('@frontend/web/public_suffix_list.dat'));
         }, 86400);
         $domainRules = $domainManager->resolve($host);
@@ -219,7 +219,7 @@ class DomainUrlManager extends UrlManager
                     asArray()->cache(86400)->all();
                     $city = NULL;
                     if (!empty($cities)) {
-                        usort($cities, function($a, $b){
+                        usort($cities, function ($a, $b) {
                             return ($b['countAd'] - $a['countAd']);
                         });
                         $city = $cities[0];

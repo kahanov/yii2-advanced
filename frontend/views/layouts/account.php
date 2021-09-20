@@ -16,28 +16,28 @@ AccountAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-	<meta charset="<?= Yii::$app->charset ?>">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?= Html::csrfMetaTags() ?>
-	<title><?= Html::encode($this->title) ?></title>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
     <?= $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Yii::$app->request->getHostInfo() . '/images/favicon.png']) ?>
-	<?php $this->head() ?>
+    <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
 <div class="wrap">
-	<?= $this->render('blocks/_header') ?>
-	<div class="container">
-		<main class="main">
-			<?= $this->render('blocks/_left_menu') ?>
-			<div class="main__content">
-				<?= Alert::widget() ?>
-				<?= $content ?>
-			</div>
-		</main>
-	</div>
-	
+    <?= $this->render('blocks/_header') ?>
+    <div class="container">
+        <main class="main">
+            <?= $this->render('blocks/_left_menu') ?>
+            <div class="main__content">
+                <?= Alert::widget() ?>
+                <?= $content ?>
+            </div>
+        </main>
+    </div>
+
 </div>
 
 <?= $this->render('blocks/_footer') ?>

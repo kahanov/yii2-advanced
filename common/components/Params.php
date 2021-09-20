@@ -15,7 +15,8 @@ class Params extends Component implements BootstrapInterface
     {
         try {
             $params = Config::find()->asArray()->all();
-        } catch (\Exception $e) {}
+        } catch (\Exception $e) {
+        }
 
         if (!empty($params)) {
             foreach ($params as $param) {

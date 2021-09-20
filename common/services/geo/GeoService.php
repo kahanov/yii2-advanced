@@ -540,7 +540,8 @@ class GeoService
                     'coordinates' => [$latitude, $longitude],
                 ];
             }
-        } catch (\Exception $e) {}
+        } catch (\Exception $e) {
+        }
 
         return $data;
     }

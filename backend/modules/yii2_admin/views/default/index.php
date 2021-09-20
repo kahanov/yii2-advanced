@@ -27,7 +27,7 @@ if ($page == 'README.md') {
     $body = file_get_contents(Url::to("@app/modules/yii2_admin/{$page}"));
 }
 
-$body = preg_replace_callback('/\]\((.*?)\)/', function($matches) use($baseDir) {
+$body = preg_replace_callback('/\]\((.*?)\)/', function ($matches) use ($baseDir) {
     $link = $matches[1];
     if (strpos($link, '://') === false) {
         if ($link[0] == '/') {

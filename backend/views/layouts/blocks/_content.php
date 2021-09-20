@@ -31,7 +31,7 @@ use yii\helpers\Html;
     <?= Alert::widget() ?>
 
     <?php if (!empty($this->title)) : ?>
-    <!--<div class="page-title">
+        <!--<div class="page-title">
             <div class="title_left">
                 <h3><?= Html::encode($this->title) ?></h3>
             </div>

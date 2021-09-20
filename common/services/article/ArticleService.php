@@ -12,47 +12,47 @@ use yii\web\NotFoundHttpException;
 
 class ArticleService
 {
-	/**
-	 * @param ArticleForm $formArticle
-	 * @param Article|NULL $article
-	 * @return Article
-	 * @throws \Throwable
-	 * @throws \yii\db\StaleObjectException
-	 */
-	public function save(ArticleForm $formArticle, Article $article = NULL): Article
-	{
-		if (!$article) {
-			$article = new Article();
-		}
-		$article->name = $formArticle->name;
-		$article->category_id = $formArticle->category_id;
-		$article->slug = $formArticle->slug;
-		$article->status = $formArticle->status;
-		$article->title = $formArticle->title;
-		$article->description = $formArticle->description;
-		$article->content = $formArticle->content;
-		$article->anons = $formArticle->anons;
-		if ($formArticle->photo) {
-			$article->addPhoto($formArticle->photo);
-		}
+    /**
+     * @param ArticleForm $formArticle
+     * @param Article|NULL $article
+     * @return Article
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function save(ArticleForm $formArticle, Article $article = NULL): Article
+    {
+        if (!$article) {
+            $article = new Article();
+        }
+        $article->name = $formArticle->name;
+        $article->category_id = $formArticle->category_id;
+        $article->slug = $formArticle->slug;
+        $article->status = $formArticle->status;
+        $article->title = $formArticle->title;
+        $article->description = $formArticle->description;
+        $article->content = $formArticle->content;
+        $article->anons = $formArticle->anons;
+        if ($formArticle->photo) {
+            $article->addPhoto($formArticle->photo);
+        }
         if (!$article->save()) {
             throw new \RuntimeException(Yii::t('common', 'Не удалось сохранить'));
         }
-		return $article;
-	}
-	
-	/**
-	 * @param $id
-	 * @throws \Throwable
-	 * @throws \yii\db\StaleObjectException
-	 */
-	public function remove($id): void
-	{
-		$article = $this->get($id);
+        return $article;
+    }
+
+    /**
+     * @param $id
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function remove($id): void
+    {
+        $article = $this->get($id);
         if (!$article->delete()) {
             throw new \RuntimeException(Yii::t('common', 'Не удалось удалить'));
         }
-	}
+    }
 
     /**
      * @param $id

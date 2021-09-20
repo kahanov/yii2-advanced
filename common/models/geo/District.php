@@ -18,32 +18,32 @@ use yii\db\ActiveQuery;
  */
 class District extends ActiveRecord
 {
-	/**
-	 * @return string
-	 */
-	public static function tableName(): string
-	{
-		return 'district';
-	}
-	
-	/**
-	 * @return array
-	 */
-	public function attributeLabels(): array
-	{
-		return [
-			'id' => Yii::t('backend/geo', 'Идентификатор'),
-			'region_id' => Yii::t('backend/geo', 'Регион'),
-			'title' => Yii::t('backend/geo', 'Название'),
-			'slug' => Yii::t('backend/geo', 'Название транслитом'),
-		];
-	}
-	
-	/**
-	 * @return ActiveQuery
-	 */
-	public function getRegion(): ActiveQuery
-	{
-		return $this->hasOne(Region::class, ['id' => 'region_id']);
-	}
+    /**
+     * @return string
+     */
+    public static function tableName(): string
+    {
+        return 'district';
+    }
+
+    /**
+     * @return array
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'id' => Yii::t('backend/geo', 'Идентификатор'),
+            'region_id' => Yii::t('backend/geo', 'Регион'),
+            'title' => Yii::t('backend/geo', 'Название'),
+            'slug' => Yii::t('backend/geo', 'Название транслитом'),
+        ];
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getRegion(): ActiveQuery
+    {
+        return $this->hasOne(Region::class, ['id' => 'region_id']);
+    }
 }

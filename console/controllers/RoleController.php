@@ -15,25 +15,25 @@ use yii\helpers\ArrayHelper;
 class RoleController extends Controller
 {
     private $service;
-	
-	/**
-	 * RoleController constructor.
-	 * @param $id
-	 * @param $module
-	 * @param UserManageService $service
-	 * @param array $config
-	 */
-	public function __construct($id, $module, UserManageService $service, $config = [])
+
+    /**
+     * RoleController constructor.
+     * @param $id
+     * @param $module
+     * @param UserManageService $service
+     * @param array $config
+     */
+    public function __construct($id, $module, UserManageService $service, $config = [])
     {
         parent::__construct($id, $module, $config);
         $this->service = $service;
     }
-	
-	/**
-	 * Adds role to user
-	 * @throws Exception
-	 */
-	public function actionAssign(): void
+
+    /**
+     * Adds role to user
+     * @throws Exception
+     */
+    public function actionAssign(): void
     {
         $username = $this->prompt('Username:', ['required' => true]);
         $user = $this->findModel($username);
@@ -41,13 +41,13 @@ class RoleController extends Controller
         $this->service->assignRole($user->id, $role);
         $this->stdout('Done!' . PHP_EOL);
     }
-	
-	/**
-	 * @param $username
-	 * @return User
-	 * @throws Exception
-	 */
-	private function findModel($username): User
+
+    /**
+     * @param $username
+     * @return User
+     * @throws Exception
+     */
+    private function findModel($username): User
     {
         if (!$model = User::findOne(['username' => $username])) {
             throw new Exception('User is not found');

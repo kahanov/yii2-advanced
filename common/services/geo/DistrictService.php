@@ -14,26 +14,26 @@ class DistrictService
      * @return District
      */
     public function save(DistrictForm $form, District $district = NULL): District
-	{
+    {
         $isNew = false;
         if (!$district) {
             $isNew = true;
             $district = new District();
         }
-		$district->title = $form->title;
-		$district->region_id = $form->region_id;
-		$district->slug = $form->slug;
+        $district->title = $form->title;
+        $district->region_id = $form->region_id;
+        $district->slug = $form->slug;
         if (!$district->save()) {
             throw new \RuntimeException(Yii::t('common', 'Не удалось сохранить'));
         }
-		if ($form->slug_prefix && $isNew) {
-			$district->slug = $form->slug . '-' . $district->id;
+        if ($form->slug_prefix && $isNew) {
+            $district->slug = $form->slug . '-' . $district->id;
             if (!$district->save()) {
                 throw new \RuntimeException(Yii::t('common', 'Не удалось сохранить'));
             }
-		}
-		return $district;
-	}
+        }
+        return $district;
+    }
 
     /**
      * @param $id

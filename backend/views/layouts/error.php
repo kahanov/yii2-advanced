@@ -27,10 +27,10 @@ AppAsset::register($this);
 
     <div class="main_container">
 
-		<!-- page content -->
-		<?= $this->render('blocks/_content', ['content' => $content]) ?>
-		<!-- /page content -->
-		
+        <!-- page content -->
+        <?= $this->render('blocks/_content', ['content' => $content]) ?>
+        <!-- /page content -->
+
     </div>
 
 </div>

@@ -66,13 +66,13 @@ $this->registerCss($css);
                             </div>
                         <?php endif; ?>
                         <div class="post__text" itemprop="text">
-                                <?= Yii::$app->formatter->asHtml($model->content, [
-                                    'Attr.AllowedRel' => array('nofollow'),
-                                    'HTML.SafeObject' => true,
-                                    'Output.FlashCompat' => true,
-                                    'HTML.SafeIframe' => true,
-                                    'URI.SafeIframeRegexp' => '%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%',
-                                ]) ?>
+                            <?= Yii::$app->formatter->asHtml($model->content, [
+                                'Attr.AllowedRel' => array('nofollow'),
+                                'HTML.SafeObject' => true,
+                                'Output.FlashCompat' => true,
+                                'HTML.SafeIframe' => true,
+                                'URI.SafeIframeRegexp' => '%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%',
+                            ]) ?>
                         </div>
                     </div>
                 </div>

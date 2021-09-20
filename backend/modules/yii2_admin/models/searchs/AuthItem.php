@@ -10,7 +10,7 @@ use yii\rbac\Item;
 
 /**
  * AuthItemSearch represents the model behind the search form about AuthItem.
- * 
+ *
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
@@ -62,7 +62,7 @@ class AuthItem extends Model
         if ($this->type == Item::TYPE_ROLE) {
             $items = $authManager->getRoles();
         } else {
-            $items = array_filter($authManager->getPermissions(), function($item) {
+            $items = array_filter($authManager->getPermissions(), function ($item) {
                 return $this->type == Item::TYPE_PERMISSION xor strncmp($item->name, '/', 1) === 0;
             });
         }

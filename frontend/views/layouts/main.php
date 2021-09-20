@@ -28,31 +28,31 @@ $homeLabel = Yii::t('common', 'Тестовый проект в') . ' ' . $addit
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-	<meta charset="<?= Yii::$app->charset ?>">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?= Html::csrfMetaTags() ?>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?= Html::csrfMetaTags() ?>
     <?= $this->registerLinkTag(['rel' => 'canonical', 'href' => Yii::$app->request->getHostInfo() . '/' . Yii::$app->request->getPathInfo()]) ?>
     <title><?= Html::encode($this->title) ?></title>
     <?= $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Yii::$app->request->getHostInfo() . '/images/favicon.png']) ?>
-	<?php $this->head() ?>
+    <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="wrap <?= (Yii::$app->devicedetect->isMobile()) ? 'mobile-client' : ''?>">
-	<?= $this->render('blocks/_header') ?>
+<div class="wrap <?= (Yii::$app->devicedetect->isMobile()) ? 'mobile-client' : '' ?>">
+    <?= $this->render('blocks/_header') ?>
 
-	<main class="container">
-		<?= Breadcrumbs::widget([
+    <main class="container">
+        <?= Breadcrumbs::widget([
             'homeLink' => [
                 'label' => $homeLabel,
                 'url' => Yii::$app->getHomeUrl()
             ],
-			'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-		]) ?>
-		<?= Alert::widget() ?>
-		<?= $content ?>
-	</main>
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= Alert::widget() ?>
+        <?= $content ?>
+    </main>
     <?= $this->render('blocks/_footer') ?>
 </div>
 

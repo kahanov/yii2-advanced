@@ -20,30 +20,30 @@ use yii\db\ActiveRecord;
  */
 class Country extends ActiveRecord
 {
-	/**
-	 * @return string
-	 */
-	public static function tableName(): string
-	{
-		return 'country';
-	}
-	
-	/**
-	 * @return array
-	 */
-	public function attributeLabels(): array
-	{
-		return [
-			'id' => Yii::t('backend/geo', 'Идентификатор'),
-			'title' => Yii::t('backend/geo', 'Название'),
-			'v_title' => Yii::t('backend/geo', 'Название в дательном падеже'),
-			'slug' => Yii::t('backend/geo', 'Название транслитом'),
-			'phone_code' => Yii::t('backend/geo', 'Телефонный код'),
-			'currency_code' => Yii::t('backend/geo', 'Код валюты'),
-			'currency_name' => Yii::t('backend/geo', 'Название валюты'),
-			'language' => Yii::t('backend/geo', 'Язык'),
-		];
-	}
+    /**
+     * @return string
+     */
+    public static function tableName(): string
+    {
+        return 'country';
+    }
+
+    /**
+     * @return array
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'id' => Yii::t('backend/geo', 'Идентификатор'),
+            'title' => Yii::t('backend/geo', 'Название'),
+            'v_title' => Yii::t('backend/geo', 'Название в дательном падеже'),
+            'slug' => Yii::t('backend/geo', 'Название транслитом'),
+            'phone_code' => Yii::t('backend/geo', 'Телефонный код'),
+            'currency_code' => Yii::t('backend/geo', 'Код валюты'),
+            'currency_name' => Yii::t('backend/geo', 'Название валюты'),
+            'language' => Yii::t('backend/geo', 'Язык'),
+        ];
+    }
 
     /**
      * @return array

@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
             <li><a class="close-link"><i class="fa fa-close"></i></a></li>
-			<li><?= Html::a('<i class="fa fa-plus"></i>', ['create'], ['class' => 'create-item'])?></li>
+            <li><?= Html::a('<i class="fa fa-plus"></i>', ['create'], ['class' => 'create-item']) ?></li>
         </ul>
         <div class="clearfix"></div>
     </div>
@@ -49,21 +49,21 @@ $this->params['breadcrumbs'][] = $this->title;
                         return GridView::OperationsMenu($url_arr);
                     }
                 ],
-				[
-					'headerOptions' => ['width' => '50'],
-					'attribute' => 'id',
-				],
-				[
-					'headerOptions' => ['width' => '140'],
-					'attribute' => 'sort',
-				],
-				[
-					'attribute' => 'name',
-					'value' => function (ArticleCategory $model) {
-						return Html::a(Html::encode($model->name), ['view', 'id' => $model->id]);
-					},
-					'format' => 'raw',
-				],
+                [
+                    'headerOptions' => ['width' => '50'],
+                    'attribute' => 'id',
+                ],
+                [
+                    'headerOptions' => ['width' => '140'],
+                    'attribute' => 'sort',
+                ],
+                [
+                    'attribute' => 'name',
+                    'value' => function (ArticleCategory $model) {
+                        return Html::a(Html::encode($model->name), ['view', 'id' => $model->id]);
+                    },
+                    'format' => 'raw',
+                ],
             ],
         ]); ?>
     </div>
